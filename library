@@ -1,0 +1,38 @@
+//Import the Java package we need
+import java.util.HashMap;
+
+public class Library{
+  //The constructor
+  public Library(){
+    
+  }
+//Function that will print the finished books
+  public void getFinishedBooks( HashMap<String, Boolean> library){
+    if(library.size() < 1){
+      System.out.println("Error the library is empty");
+    }
+    else{
+      for ( String book : library.keySet() ){
+        //Check that the HashMap is empty
+        if(library.get(book) == true){
+          System.out.println(book);
+        }
+      }
+    }
+    
+  }
+ 
+  public static void main (String [ ] args){
+    HashMap<String, Boolean> myBooks = new HashMap<String, Boolean>();
+    //Add the books
+    myBooks.put("Road Down The Funne", true);
+    myBooks.put("Rat: A Biology", false);
+    myBooks.put("TimeIn", true);
+    myBooks.put("3D Food Printing", false);
+    
+    Library myLibrary = new Library();
+    
+    myLibrary.getFinishedBooks(myBooks);
+  }
+    
+}
